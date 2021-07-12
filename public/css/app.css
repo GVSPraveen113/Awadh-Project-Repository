@@ -1,0 +1,10 @@
+.products {
+    margin: 5px auto;
+}
+.products .card img {
+    padding: 15px;
+    height: 225px;
+  }
+#border{
+    border:0.5px solid green;
+}
