@@ -19,12 +19,11 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title"><%=item.name%></h5>
-                <h5 class="card-text"><%= item.desc %> </h5>
+                <p class="card-text"><%= item.desc %> </p>
 
                 <form action="/user/<%=currentUser._id%>/cart/<%=item._id%>?_method=DELETE" method="post">
                   <button class="btn btn-sm btn-danger">Remove</button>
                 </form>
-                
                 
               </div>
             </div>
@@ -49,7 +48,12 @@
 
         <div class="mt-2">
           <p class="fw-bold">Total Amount :  &#8377; <%=totalAmount%></p>
-          <a href="/cart/payment" class="btn btn-success">Proceed To Pay</a>
+          <!--<a href="/cart/payment" class="btn btn-success">Proceed To Pay</a>-->
+          <form action="/payment_gateway/pay" method="POST">
+            <input class="amount" type="hidden" name="amount" value="<%=totalAmount%>"/>
+            <button class="btn btn-success">Proceed To Pay</button>
+          </form>
+        
         </div>
        
       </div>
