@@ -1,0 +1,62 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+
+
+<div class="container" style="margin-top:3rem;width:80vw">
+ 
+            <form class="validated-form" action="/bids" method="POST" style="max-width:70%;margin:10px auto" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Crop Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Bidding Product Name" name="bid[name]" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="img" class="form-label">Image URL</label>
+                  <input type="text" class="form-control" id="img" placeholder="Image URL" name="bid[image]" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Base Price in Rs</label>
+                    <input type="number" class="form-control" id="price" placeholder="Price" name="bid[basePrice]" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="text" class="form-control" id="quantity" placeholder="Enter Quantity" name="bid[quantity]" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="date" name="bid[endDate]" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>  
+        
+                <div class="mb-3">
+                    <label for="img" class="form-label">Farmer Name</label>
+                    <input type="text" class="form-control" id="quantity" placeholder="Enter Farmer's Name" name="bid[farmer]" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+                  
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+        
+   
+</div>
+
+
+<%- include("../partials/footer")%>

@@ -14,6 +14,7 @@ router.post('/payment_gateway/pay',isLoggedIn, async (req, res) => {
         const order= {
             txnid: req.body.txnid,
             amount: req.body.amount,
+            address: req.body.address,
             orderedProducts:req.user.cart
         }
     

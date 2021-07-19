@@ -51,6 +51,11 @@
           <!--<a href="/cart/payment" class="btn btn-success">Proceed To Pay</a>-->
           <form action="/payment_gateway/pay" method="POST">
             <input class="amount" type="hidden" name="amount" value="<%=totalAmount%>"/>
+            
+            <div class="input-group mb-3">  
+              <label for="address"><strong>Address : </strong></label>
+              <textarea name="address" placeholder="Enter your Present Delivery Location" class="address" cols="30" rows="2"></textarea>
+           </div>
             <button class="btn btn-success">Proceed To Pay</button>
           </form>
         

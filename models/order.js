@@ -15,6 +15,10 @@ const orderSchema = new mongoose.Schema({
         type: Date,
         default:Date.now
     },
+    address: {
+        type: String,
+        required: true
+    },
     orderedProducts: [
         {
             type: mongoose.Schema.Types.ObjectId,

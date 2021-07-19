@@ -16,6 +16,7 @@
                             <p>Total : 	&#8377 <%=order.amount%></p>
                             <p class="fw-light fs-6">Transaction Id : <%=order.txnid%> </p>
                             <p class="fw-light fs-6">Order Date : <%=order.date.toDateString()%> </p>
+                            <p class="fw-light fs-6">Delivery Location : <%=order.address%></p>
                         </h5>
                         <div class="card-body">
                             <%for(let item of order.orderedProducts){%>
@@ -29,8 +30,10 @@
                                       </div>-->
                                       <div class="col-md-8" style="background-color:azure">
                                         <div class="card-body">
-                                          <h6 class="card-title"><%=item.name%></h6>
-                                          <h6 class="card-title"><%=item.price%></h6>
+                                          <h6 class="card-title">Name of Product :<%=item.name%></h6>
+                                          <h6 class="card-title">Price : <%=item.price%></h6>
+                                          <h6 class="card-title">Quantity : 1 kg</h6>
+                                         
                                           <h6 class="card-title">Temperature :Yet To be Recorded</h6>
                                           <h6 class="card-title">Humidity :Yet To be Recorded </h6>
                                           <br>
@@ -38,6 +41,7 @@
                                           <!-- <a href="/products/<%=item._id%>" class="btn btn-info btn-sm">Buy it again</a> -->
                                         </div>
                                       </div>
+                                      <a href="#">View More Details</a>
                                     </div>
                                   </div>
                             <%}%>

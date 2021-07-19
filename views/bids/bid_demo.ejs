@@ -1,0 +1,108 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+
+<div class="container mt-5">
+  <%- include("../partials/flash")%>
+
+    <div class="row">
+        <div class="col-lg-6" style="">
+            <div class="card" style="width: 25rem; border: 2px solid black">
+                <img src="https://images.unsplash.com/photo-1543528176-61b239494933?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RyYXdiZXJyaWVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Product Name : Strawberries</h5>
+                  <p class="card-text">Base Price : Rs 5500</p>
+                  <p class="card-text">Quantity : 100 kgs</p>
+                  <p class="card-text">Farmer Name : Farmer 1</p>
+                  <!--<a href="/payment_gateway/pay" class="btn btn-success">Buy Now</a>-->
+                  
+                  </div>
+                </div>
+              </div>
+      
+        <br>
+        <br>
+        <br>
+
+       
+       
+        <div class="col-lg-6" style = "border: 1px solid black; border-radius: 1px;">
+            <h6 class="display-12">Please Drop your Bidding Price Here! </h6>
+            
+            <div class="mb-3 mt-3" >
+                <div class="mb-3 mt-3">
+                    <form action="" method="POST">
+                      <label for="company_name" class="form-label">Company Name :   </label>
+                      <input class="company_name" name="company_name" placeholder="Enter Company Name" />
+                      <br>
+                      <br>
+                      <label for="company_email" class="form-label">Company Email :  </label>
+                      <input class="company_email" name="company_email" placeholder="Enter Company Email" />
+                      <br>
+                      <br>
+                      <label for="company_location" class="form-label">Company Location : </label>
+                      <input class="company_location" name="company_location" placeholder="Enter Company Address" />
+                      <br>
+                      <br>
+                      <label for="modify_price" class="form-label">Enter Price : </label>
+                      <input class="modify_price" name="modify_amount" placeholder="Enter your price" />
+                      <br>
+                      <br>
+                      <button class="btn btn-success">Submit your Bid</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+<br>
+<br>
+
+<h2 style="text-align:center; color: rgb(230, 76, 76);"  >Previous Biddings</h2>
+<div class="row" style="margin: 2px">
+<div class="col-lg-4">
+    <div class="card" style="width: 25rem; border : 1px solid burlywood">
+        <div class="card-body">
+          <h5 class="card-title">Company Name : XYZ Preprocessors </h5>
+          <p class="card-text">Price Set : Rs 7500</p>
+          <p class="card-text">Company Email : xyzpreprocessors@gmail.com</p>
+          <p class="card-text">Company Location : Noida, Delhi</p>
+
+          <!--<a href="/payment_gateway/pay" class="btn btn-success">Buy Now</a>-->
+          
+        </div>
+    </div>
+ </div>
+
+ <div class="col-lg-4">
+    <div class="card" style="width: 25rem; border : 1px solid burlywood">
+        <div class="card-body">
+          <h5 class="card-title">Company Name : Kelvin Manufacturers </h5>
+          <p class="card-text">Price Set : Rs 6600</p>
+          <p class="card-text">Company Email : kelvinmanufacturers@gmail.com</p>
+          <p class="card-text">Company Location : Kerala </p>
+
+          <!--<a href="/payment_gateway/pay" class="btn btn-success">Buy Now</a>-->
+          
+        </div>
+    </div>
+ </div>
+
+ <div class="col-lg-4">
+    <div class="card" style="width: 25rem; border : 1px solid burlywood">
+        <div class="card-body">
+          <h5 class="card-title">Company Name : ABC Manufacturers </h5>
+          <p class="card-text">Price Set : Rs 6400</p>
+          <p class="card-text">Company Email : abcmanufacturers@gmail.com</p>
+          <p class="card-text">Company Location : Rajastan </p>
+
+          <!--<a href="/payment_gateway/pay" class="btn btn-success">Buy Now</a>-->
+          
+        </div>
+    </div>
+ </div>
+</div>
+
+
+<%- include("../partials/footer")%>

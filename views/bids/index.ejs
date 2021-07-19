@@ -1,0 +1,35 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+
+<main class="container">
+
+    <section>
+        <h4 class="display-4">LIVE TRADES! Participate in Biddings</h4>
+    </section>
+   
+    <div class="row bids">
+        <%for(let bid of bids){%>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center m-3" id="border" style="width: 18rem;">
+                    <img src="<%=bid.image%>" class="card-img-top" alt="..." style="height : 200px">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=bid.name%></h5>
+                      <p class="card-text">Uploaded At :<%=bid.uploadDate%></p>
+                      <p class="card-text">Base Price Rs :<%=bid.basePrice%></p>
+                      <p class="card-text">Quantity : <%=bid.quantity%> kgs</p>
+                      <p class="card-text">Farmer Name : <%=bid.farmer%></p>
+                      <p class="card-text">Ends On : <%=bid.endDate%></p>
+                      <a href="/bids/<%=bid._id%>" class="btn btn-outline-primary">Join to Bid</a>
+                    </div>
+                  </div>
+            </div>
+       <% }%>
+    </div>
+
+
+
+</div>
+
+    
+<%- include("../partials/footer")%>

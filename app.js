@@ -4,8 +4,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express');
 const app = express();
+const http=require('http');
 const mongoose = require('mongoose');
 const path = require('path');
+const socketio=require('socket.io');
+const server = http.createServer(app);
+const io=socketio(server);
 const seedDB = require('./seed');
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -21,6 +25,9 @@ const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
 const paymentRoutes = require('./routes/payment');
 const userRoutes = require('./routes/user');
+const blogRoutes = require('./routes/blog');
+const bidRoutes = require('./routes/bid');
+
 
 mongoose.connect('mongodb://localhost:27017/shopApp',
     {
@@ -84,6 +91,8 @@ app.use(authRoutes);
 app.use(cartRoutes);
 app.use(paymentRoutes);
 app.use(userRoutes);
+app.use(blogRoutes);
+app.use(bidRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
