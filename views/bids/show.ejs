@@ -12,7 +12,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Product Name : <%=bid.name%></h5>
                   <p class="card-text">Base Price : Rs <%= bid.basePrice %> </p>
-                  <p class="card-text">Quantity : <%= bid.quantity %> </p>
+                  <p class="card-text">Quantity : <%= bid.quantity %> kgs</p>
                   <p class="card-text">Farmer Name : <%=bid.farmer%></p>
                   <!--<a href="/payment_gateway/pay" class="btn btn-success">Buy Now</a>-->
                   
@@ -31,21 +31,21 @@
             
             <div class="mb-3 mt-3" >
                 <div class="mb-3 mt-3">
-                    <form action="/bids/<%=bid._id%> " method="POST">
+                    <form action="/bids/<%=bid._id%>/previousbids " method="POST">
                       <label for="company_name" class="form-label">Company Name :   </label>
-                      <input class="company_name" name="company_name" placeholder="Enter Company Name" />
+                      <input class="company_name" name="companyName" placeholder="Enter Company Name" />
                       <br>
                       <br>
                       <label for="company_email" class="form-label">Company Email :  </label>
-                      <input class="company_email" name="company_email" placeholder="Enter Company Email" />
+                      <input class="company_email" name="companyEmail" placeholder="Enter Company Email" />
                       <br>
                       <br>
                       <label for="company_location" class="form-label">Company Location : </label>
-                      <input class="company_location" name="company_location" placeholder="Enter Company Address" />
+                      <input class="company_location" name="companyLocation" placeholder="Enter Company Address" />
                       <br>
                       <br>
                       <label for="modify_price" class="form-label">Enter Price : </label>
-                      <input class="modify_price" name="modify_amount" placeholder="Enter your price" />
+                      <input class="modify_price" name="modifiedPrice" placeholder="Enter your price" />
                       <br>
                       <br>
                       <button class="btn btn-success">Submit your Bid</button>

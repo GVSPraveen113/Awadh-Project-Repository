@@ -1,4 +1,5 @@
 const mongoose=require('mongoose');
+const PreviousBid = require('./previousbids');
 
 const bidSchema= new mongoose.Schema({
     name:
@@ -46,7 +47,13 @@ const bidSchema= new mongoose.Schema({
     quantity:
     {
         type:Number
-    }
+    },
+    previousBids:[
+            {
+               type: mongoose.Schema.Types.ObjectId,
+               ref:'PreviousBid'
+            }
+    ]
 
 });
 

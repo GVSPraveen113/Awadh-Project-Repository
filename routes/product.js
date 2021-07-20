@@ -3,6 +3,7 @@ const router = express.Router();
 const Product = require('../models/product');
 const Review = require('../models/review');
 const {isLoggedIn} = require('../middleware');
+const {isAdmin} = require('../isadmin');
 
 
 // Display all the products
@@ -20,13 +21,13 @@ router.get('/products', async(req, res) => {
 
 
 // Get the form for new product
-router.get('/products/new',isLoggedIn ,(req, res) => {
+router.get('/products/new',isLoggedIn, isAdmin ,(req, res) => {
     res.render('products/new');
 })
 
 
 // Create New Product
-router.post('/products',isLoggedIn, async(req, res) => {
+router.post('/products',isLoggedIn, isAdmin, async(req, res) => {
 
     try {
         await Product.create(req.body.product);

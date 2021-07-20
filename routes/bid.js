@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {isLoggedIn} = require('../middleware');
 const Bid = require('../models/bid');
+const PreviousBid = require('../models/previousbids');
 
 
 // Display all the products
@@ -58,7 +59,30 @@ router.get('/bids/:id', async(req, res) => {
     }
 })
 
+router.post('/bids/:id/previousbids',isLoggedIn, async (req, res) => {
+    
+    try {
+        const bid = await Bid.findById(req.params.id);
+        const previousbid = new PreviousBid({
+            user: req.user.username,
+            ...req.body
+        });
 
+        bid.previousBids.push(previousbid);
+
+        await previousbid.save();
+        await bid.save();
+
+        req.flash('success','Successfully added your Bid!')
+        res.redirect(`/bids/${req.params.id}`);
+    }
+    catch (e) {
+        console.log(e.message);
+        req.flash('error', 'Cannot add your entry to this Bid');
+        res.redirect('/error');
+    }
+    
+})
 
 
 router.get('/error', (req, res) => {
